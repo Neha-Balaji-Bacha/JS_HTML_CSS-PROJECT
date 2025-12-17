@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Recipe Roulette</title>
+        <link rel="stylesheet" href="Recipe.css" />
+    </head>
+
+    <body>
+        <section id="introScreen" class="screen intro-screen">
+            <h1 class="intro-title">🍽 Recipe Roulette</h1>
+            <p class="intro-text">Never wonder what to cook again</p>
+        </section>
+
+        <header class="navbar">
+            <button class="nav-btn active" data-screen="addScreen">Add Recipe</button>
+            <button class="nav-btn" data-screen="allScreen">All Recipes</button>
+            <button class="nav-btn" data-screen="favScreen">Favorites</button>
+            <button class="nav-btn" data-screen="recentScreen">Recently Cooked</button>
+
+            <button id="spinBtn" class="btn-spin">Pick for me..!!</button>
+        </header>
+
+        <section id="addScreen" class="screen">
+            <div class="card form-card">
+                <h2>Add New Recipe</h2>
+                <form id="recipeForm" novalidate>
+                    <div class="form-group">
+                        <label for="name">Recipe Name</label>
+                        <input type="text" id="name" />
+                        <small class="error" id="nameError"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ingredients">Ingredients</label>
+                        <textarea id="ingredients"></textarea>
+                        <small class="error" id="ingredientsError"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time">Cooking Time (minutes)</label>
+                        <input type="number" id="time" min="5" />
+                        <small class="error" id="timeError"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="difficulty">Difficulty</label>
+                        <div class="options-inline">
+                            <label><input type="radio" name="difficulty" value="Easy" /> Easy</label>
+                            <label><input type="radio" name="difficulty" value="Medium" /> Medium</label>
+                            <label><input type="radio" name="difficulty" value="Hard" /> Hard</label>
+                        </div>
+                        <small class="error" id="difficultyError"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Categories</label>
+                        <div class="options-inline">
+                            <label><input type="checkbox" name="category" value="Breakfast" /> Breakfast</label>
+                            <label><input type="checkbox" name="category" value="Lunch" /> Lunch</label>
+                            <label><input type="checkbox" name="category" value="Dinner" /> Dinner</label>
+                            <label><input type="checkbox" name="category" value="Snack" /> Snack</label>
+                        </div>
+                        <small class="error" id="categoryError"></small>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="btn-primary" disabled>Add Recipe</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="allScreen" class="screen hidden">
+            <h2>All Recipes</h2>
+            <div id="allRecipes" class="recipe-list"></div>
+            <p class="empty-msg" id="allEmptyMsg">No recipes yet</p>
+        </section>
+
+        <section id="favScreen" class="screen hidden">
+            <h2>Favorites</h2>
+            <div id="favoriteRecipes" class="recipe-list"></div>
+            <p class="empty-msg" id="favEmptyMsg">No favorites yet</p>
+        </section>
+
+        <section id="recentScreen" class="screen hidden">
+            <h2>Recently Selected</h2>
+            <div id="recentRecipes" class="recipe-list"></div>
+            <p class="empty-msg" id="recentEmptyMsg">Nothing selected yet</p>
+        </section>
+
+        <script src="Recipe.js"></script>
+    </body>
+
+</html>
