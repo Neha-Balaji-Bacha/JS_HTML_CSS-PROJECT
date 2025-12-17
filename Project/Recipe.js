@@ -13,7 +13,7 @@ const MAX_RECIPES = 8; // you can change this number
 const STORAGE_KEY = "recipesData";
 let recipes = [];
 
-/**************** DOM ****************/
+/**************** DOM ***************/
 const screens = document.querySelectorAll(".screen");
 const navButtons = document.querySelectorAll(".nav-btn");
 
